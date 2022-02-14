@@ -9,7 +9,9 @@
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
     />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/parallax.min.js"></script>
     <link
       rel="stylesheet"
       type="text/css"
@@ -32,6 +34,7 @@
         <li><a href="#">Experiences</a></li>
         <li><a href="#">Activities</a></li>
       </ul>
+      <div class="bars"><i class="xi-bars"></i></div>
     </header>
 
     <section class="slide_wrapper">
@@ -57,7 +60,7 @@
 
     <section class="section our_story">
       <div class="inner">
-        <div class="info">
+        <div class="info left_ani">
           <h1>Discover</h1>
           <h3>Our story</h3>
           <div class="sun"><i class="xi-brightness"></i></div>
@@ -68,7 +71,7 @@
           </h4>
           <a href="#" class="go_btn">go on a trip</a>
         </div>
-        <div class="photo">
+        <div class="photo right_ani">
           <img src="./images/our_story.jpg" alt="our_story" />
         </div>
       </div>
@@ -83,13 +86,13 @@
 
     <section class="section travel">
       <div class="inner">
-        <div class="photo">
+        <div class="photo left_ani">
           <div><img src=".//images/travel_01.jpg" alt="" /></div>
           <div><img src=".//images/travel_02.jpg" alt="" /></div>
           <div><img src=".//images/travel_03.jpg" alt="" /></div>
           <div><img src=".//images/travel_04.jpg" alt="" /></div>
         </div>
-        <div class="info">
+        <div class="info right_ani">
           <h1>Discover</h1>
           <h3>travel</h3>
           <div class="sun"><i class="xi-brightness"></i></div>
@@ -112,7 +115,7 @@
 
     <section class="section yourself">
       <div class="inner">
-        <div class="info">
+        <div class="info left_ani">
           <h1>Discover</h1>
           <h3>yourself</h3>
           <div class="sun"><i class="xi-brightness"></i></div>
@@ -124,8 +127,8 @@
           <a href="#" class="go_btn">Meet people</a>
         </div>
         <div class="photo">
-          <div><img src="./images/yourself_01.jpg" alt="our_story" /></div>
-          <div><img src="./images/yourself_02.jpg" alt="our_story" /></div>
+          <div class="top_ani" ><img src="./images/yourself_01.jpg" alt="our_story" /></div>
+          <div class="bottom_ani" ><img src="./images/yourself_02.jpg" alt="our_story" /></div>
         </div>
       </div>
     </section>
@@ -171,6 +174,7 @@
           </div>
         </div>
       </div>
+      <div class="go_top"><i class="xi-angle-up"></i></div>
     </footer>
 
     <script
@@ -178,12 +182,7 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
 
-    <script>
-      $(".slides").slick({
-        autoplay: true,
-        autoplaySpeed: 5000,
-        arrows: false,
-      });
-    </script>
+    <script src="./js/common.js"></script>
+  </body>
   </body>
 </html>

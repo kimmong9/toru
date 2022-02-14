@@ -97,6 +97,12 @@ header {
   gap: 60px;
 }
 
+.bars {
+  color: var(--light);
+  font-size: 24px;
+  display: none;
+}
+
 /* slide */
 .slide_wrapper {
   position: relative;
@@ -129,18 +135,31 @@ header {
   transform: translate(-50%, -50%);
   text-align: center;
 }
+.slide_text h1 {
+  animation: scale 0.5s forwards;
+}
+.slide_text h2 {
+  animation: fadeUp 0.5s 0.4s forwards;
+  opacity: 0;
+}
 
 .line {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 0;
+  opacity: 0;
+  animation: grow 0.5s 0.8s forwards;
 }
 
 .sun {
   font-size: 1.8rem;
   margin: 10px 0;
   color: var(--accent);
+}
+.slide_text .sun {
+  margin: 0 10px;
+  animation: rotate 0.5s 1s forwards;
 }
 
 .line_left,
@@ -176,6 +195,8 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 18px;
+  opacity: 0;
+  animation: fadeDown 0.5s 1.5s forwards;
 }
 
 .sub_text p {
@@ -245,11 +266,11 @@ header {
 }
 
 .banner.item_01 {
-  background-image: url("../images/slide_02.jpg");
+  /* background-image: url("../images/slide_02.jpg"); */
 }
 
 .banner.item_02 {
-  background-image: url("../images/slide_03.jpg");
+  /* background-image: url("../images/slide_03.jpg"); */
 }
 
 .banner > div {
@@ -274,6 +295,7 @@ footer {
   background-color: var(--dark);
   color: var(--light);
   text-align: center;
+  position: relative;
 }
 
 footer h4 {
@@ -329,4 +351,132 @@ footer .inner {
   right: 10px;
   font-size: 24px;
   color: var(--basic);
+}
+
+.go_top {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--dark);
+  z-index: 1;
+  color: #fff;
+  font-size: 30px;
+}
+
+.go_top i {
+  position: relative;
+  top: 35px;
+  opacity: 0;
+  animation: wheel_ani 1.2s infinite;
+  cursor: pointer;
+}
+
+/* 애니메이션  */
+@keyframes scale {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes fadeUp {
+  0% {
+    transform: translateY(4rem);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes grow {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes fadeDown {
+  0% {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes wheel_ani {
+  0% {
+    top: 35px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  header {
+    padding: 30px 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+  .inner {
+    flex-direction: column;
+  }
+
+  .bars {
+    display: block;
+  }
+
+  .section .inner > div {
+    width: initial;
+  }
+
+  .travel .photo {
+    order: 2;
+  }
+  .travel .info {
+    order: 1;
+  }
+
+  h1 {
+    font-size: 6rem;
+    font-family: "Nothing You Could Do", cursive;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  h2 {
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  footer {
+    padding: 80px 0 80px;
+  }
+
+  .footer_extra {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+  }
 }
